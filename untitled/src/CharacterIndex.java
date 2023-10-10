@@ -7,28 +7,25 @@
  *      within the string.
  */
 
-import java.util.Arrays;
 import java.util.Scanner;
 public class CharacterIndex {
     public static void main(String[] args) {
         Scanner inputOne = new Scanner(System.in);
         System.out.println("Please enter a word.");
-        String[] entry = new String[]{inputOne.nextLine()};
+        String entry = inputOne.nextLine();
 
+        int index = entry.length() - 1;
         Scanner inputTwo = new Scanner(System.in);
-        System.out.println("Please enter any single letter.");
+        System.out.println("Please enter a character.");
         String letter = inputTwo.nextLine();
+        char check = letter.charAt(0);
 
-        while(letter.length() > 1 | letter.isEmpty()) {
-            System.out.println("ERROR: Please enter a valid input.");
-            letter = inputTwo.nextLine();
-        }
-        int index = -1;
-        for(int i = 0; i < entry.length; i++) {
-            if(entry[i].equals(letter)) {
-                index = i;
+        int output = -1;
+        for(int i = 0; i <= index; i++) {
+            if(check == entry.charAt(i)) {
+                output = i;
             }
         }
-        System.out.println("The last occurrence of " + letter + " in string " + Arrays.toString(entry) + " is at index " + index + ".");
+        System.out.println("Character " + check + " last occurs at index " + output + ".");
     }
 }
