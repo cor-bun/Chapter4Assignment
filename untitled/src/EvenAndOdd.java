@@ -14,7 +14,7 @@ public class EvenAndOdd {
         System.out.println("Please enter a number between 1 and 1000.");
         int number = input.nextInt();
 
-        while (number < 1) {
+        while (number < 1 | number > 1000) {
             System.out.println("ERROR: Please enter a valid input.");
             number = input.nextInt();
         }
